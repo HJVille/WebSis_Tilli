@@ -5,20 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tilli</title>
 </head>
+
 <body>
     <header>
-        <img src="images/logo.png" alt="My image"> 
+        <img src="images/logo.png" alt="Tilli Logo" width="100" height="100"> 
         <h1>Welcome to Tilli!</h1>
-        <p><em>Real-time expense tracking for event crews, small businesses, and shared group budgets.</em>
-</p>
+        <p>
+            <em>Real-time expense tracking for event crews, small businesses, and shared group budgets.</em>
+        </p>
     </header>
 
     <nav>
-        <h2>
-            <a href="#tills">My Tills</a>
-            <a href="#cashin-cashout">Cash In / Cash Out</a>
-            <a href="#till-history">Till History</a>
-        </h2>
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="#tills">My Tills</a></li>
+            <li><a href="#cashin-cashout">Cash In / Cash Out</a></li>
+            <li><a href="#till-history">Till History</a></li>
+        </ul>
     </nav>
 
     <hr>
@@ -26,9 +29,11 @@
     <main>
         <article>
             <h2>Manage Shared Funds, Minus the Chaos</h2>
+
             <p>Tilli tracks group spending in real-time for small businesses, events, and shared budgets.</p>
             
-            <h3>Why tilli?</h3>
+            <h3>Why Tilli?</h3>
+            
             <ul>
                 <li><strong>Instant Logging:</strong> Record cash in and out on the go.</li>
                 <li><strong>Role Access:</strong> Secure data with Host, Co-Host, and Member permissions.</li>
@@ -41,58 +46,53 @@
         
         <form> 
             <label for="email">Email address:</label>
-            <input type="email" name="email" id="Email address:">
-
-            <br>
+            <input type="email" name="email" id="email" required>
 
             <label for="password">Password:</label>
-            <input type="password" name="password" id="Password:">
+            <input type="password" name="password" id="password" required>
 
-            <br>
-
-            <button type="button">Log In</button>
-            <button type="button">Create Account</button>
+            <button type="submit">Log In</button>
+            <button type="submit">Create Account</button>
         </form>
-
-         <hr>
+        
+        <hr>
 
         <section id="tills">
             <h2>My Tills</h2>
 
             <h3>Active Tills</h3>
+
             <ul>
                 <li><a href="till-1">Company</a>(Role: <em>Host</em>)</li>
                 <li><a href="till-2">Personal</a>(Role: <em>Member</em>)</li>
             </ul>
 
             <h3>Pending Invitations</h3>
+
             <ul>
                 <li>
-                    <strong>Family Vacation</strong> <em>(Invited by: Heart)</em>
+                    <strong>Family Vacation</strong>
+                    <em>(Invited by: Heart)</em>
                     <button>Accept</button>
                     <button>Decline</button>
                 </li>
             </ul>
 
-            <h3>Create a New till</h3>
+            <h3>Create a New Till</h3>
+            
             <form>
                 <label for="till-name">Till Name:</label>
-                <input type="text">
+                <input type="text" id="till-name" name="till-name" required>
+                
+                <p>Till visibility:</p>
             
-            <p>Till visibility:</p>
-            
-            <input type="radio" id="visibility-personal" name="visibility" value="personal">
-            <label for="visibility-personal">Personal / Household (<em>Open</em>)</label>
+                <input type="radio" id="visibility-personal" name="visibility" value="personal">
+                <label for="visibility-personal">Personal / Household (<em>Open</em>)</label>
 
-            <br>
+                <input type="radio" id="visibility-team" name="visibility" value="team">
+                <label for="visibility-team">Team (<em>Restricted</em>)</label>
 
-            <input type="radio" id="Team" name="visibility" value="team">
-            <label for="visibility-team">Team (<em>Restricted</em>)</label>
-
-            <br><br>
-
-            <button type="submit"><strong>Create Till</strong></button>
-
+                <button type="submit"><strong>Create Till</strong></button>
             </form>
        
         </section>
@@ -104,98 +104,94 @@
 
             <form>
                 <label for="date">Date:</label>
-                <input type="date">
+                <input type="date" id="date" name="date" required>
 
                 <p>Type:</p>
-                <input type="radio" id="cash-in" name="type" value="cash-in">
+                <input type="radio" id="cash-in" name="type" value="cash-in" required>
                 <label for="cash-in">Cash In</label>
 
                 <input type="radio" id="cash-out" name="type" value="cash-out">
                 <label for="cash-out">Cash Out</label>
-
-                <br><br>
-
+                
                 <label for="category">Category:</label>
-                    <select id="category">
-                        <option value="transporation">Transport</option>
-                        <option value="meals">Food</option>
-                        <option value="allowance">Suppliess</option>
-                        <option value="fees">Services</option>
-                        <option value="utility">Allowance</option>
-                        <option value="payment">Payment</option>
-                        <option value="miscellaneous">Other</option>
-                    </select>
+                <select id="category" name="category" required>
+                    <option value="transportation">Transport</option>
+                    <option value="food">Food</option>
+                    <option value="supplies">Supplies</option>
+                    <option value="services">Services</option>
+                    <option value="allowance">Allowance</option>
+                    <option value="payment">Payment</option>
+                    <option value="miscellaneous">Other</option>
+                </select>
 
                 <label for="miscellaneous">Other, <em>please specify</em>:</label>
                 <input type="text" id="miscellaneous" name="other">
                 
-                <br><br>
-
                 <label for="particulars">Particulars:</label>
-                <input type="text">
-
-                <br><br>
+                <input type="text" id="particulars" name="particulars" required>
 
                 <label for="amount">Amount (₱):</label>
                 <input type="number" id="amount" name="amount" min="0.01" step="0.01" required>   
                 
-                <br><br>
-
                 <button type="submit"><strong>Till it!</strong></button>
-            <form>
+            </form>
         </section>
 
         <hr>
 
         <section id="till-history">
             <h2>Till History</h2>
-            <table border="1">  
+
+            <table>  
+
                 <thead> 
                     <tr>
-                        <th>Date</th>
-                        <th>Type</th>
-                        <th>Category</th>
-                        <th>Particulars</th>
-                        <th>Source/Vendor</th>
-                        <th>Amount</th>
-                        <th>Added By</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                    </tr>
-                    
+                        <th scope="col">Date</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Particulars</th>
+                        <th scope="col">Source/Vendor</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Added By</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                    </tr>    
                 </thead>
 
                 <tbody>
+
                     <tr>
                         <td>09-19-2026</td>
                         <td>Cash Out</td>
-                        <td>Meals>
+                        <td>Meals</td>
                         <td>Company dinner</td>
                         <td>Wolfgang</td>
                         <td>₱ 34,783.67</td>
                         <td>Heart (Host)</td>
                         <td>Active</td>
-                        <td><button disabled>Void</button></td>
+                        <td>
+                            <button type="button" disabled>Void</button>
+                        </td>
                     </tr>
-
-                <tbody>
+                    
                     <tr>
                         <td>09-26-2026</td>
                         <td>Cash In</td>
-                        <td>Allowance>
+                        <td>Allowance</td>
                         <td>School-October allowance</td>
                         <td>Daddy</td>
                         <td>₱ 6,000.00</td>
-                        <td>Moning (member)</td>
+                        <td>Moning (Member)</td>
                         <td>Active</td>
-                        <td><button>Void</button></td>
+                        <td>
+                            <button type="button">Void</button>
+                        </td>
                     </tr>
+
                 </tbody>
             </table>
-
-            <br><br>
-
-            <button>Edit</button>
+            
+            <button type="button">Edit</button>
         </section>    
         
         <hr>
