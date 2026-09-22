@@ -1,0 +1,388 @@
+/* ==================================================
+   TILLI - PERSONAL EXPENSE TRACKER
+   Main Stylesheet
+   ================================================== */
+
+
+/* ==================================================
+   1. BASIC RESET
+   ================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family:  Verdana, Tahoma, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+
+    background-color:#ECECEC;
+    color:#111827;
+}
+
+
+/* ==================================================
+   2. HEADER
+   ================================================== */
+
+header {
+    background-color: #111827;
+    color: white;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+header img {
+    width: 100px;
+    height: 100px;
+}
+
+header h1 {
+    margin: 10px 0;
+
+    font-size: 36px;
+}
+
+header p {
+    margin: 0;
+
+    font-size: 16px;
+}
+
+
+/* ==================================================
+   3. NAVIGATION
+   ================================================== */
+
+nav {
+    background-color: mistyrose;
+
+    padding: 15px 30px;
+}
+
+nav h2 {
+    display: none;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+
+    margin: 0 15px;
+}
+
+nav a {
+    color: rosybrown;
+
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #A0828C;
+}
+
+
+/* ==================================================
+   4. MAIN CONTENT
+   ================================================== */
+
+main {
+    max-width: 1100px;
+
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+
+/* ==================================================
+   5. INTRODUCTION / WHY TILLI
+   ================================================== */
+
+article {
+    background-color: white;
+
+    padding: 35px;
+    margin-bottom: 30px;
+
+    border-radius: 15px;
+}
+
+article h2 {
+    margin-top: 0;
+
+    color: rosybrown;
+    font-size: 30px;
+}
+
+article h3 {
+    color: rosybrown;
+}
+
+article li {
+    margin-bottom: 10px;
+}
+
+
+/* ==================================================
+   6. CONTENT SECTIONS
+   ================================================== */
+
+section {
+    background-color: white;
+
+    padding: 30px;
+    margin: 30px 0;
+
+    border-radius: 15px;
+}
+
+section h2 {
+    margin-top: 0;
+
+    color: rosybrown;
+}
+
+section h3 {
+    color: rosybrown;
+}
+
+
+/* ==================================================
+   7. FORMS
+   ================================================== */
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+label {
+    color: rosybrown;
+
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+
+    padding: 12px;
+
+    background-color: white;
+    color: #EDDFE2;
+
+    border: 1px solid lightpink;
+    border-radius: 8px;
+
+    font-family:  Verdana, Tahoma, sans-serif;
+    font-size: 15px;
+}
+
+input:focus,
+select:focus {
+    border-color: rosybrown;
+}
+
+.till-visibility {
+    color: rosybrown;
+    font-weight: bold;
+}
+
+/* ==================================================
+   8. RADIO BUTTONS
+   ================================================== */
+
+input[type="radio"] {
+    width: auto;
+    padding: 0;
+    margin-right: 8px;
+}
+
+
+/* ==================================================
+   9. BUTTONS
+   ================================================== */
+
+button {
+    padding: 12px 20px;
+
+    background-color: rosybrown;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-family:  Verdana, Tahoma, sans-serif;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #EDDFE2;
+}
+
+button:active {
+    background-color: lightpink;
+    color: #EDDFE2;
+}
+
+button:disabled {
+    background-color: lightgray;
+    color: gray;
+
+    cursor: not-allowed;
+}
+
+
+/* ==================================================
+   10. MY TILLS
+   ================================================== */
+
+#tills ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+#tills li {
+    background-color: mistyrose;
+
+    padding: 15px;
+    margin-bottom: 10px;
+
+    border-left: 5px solid lightpink;
+    border-radius: 8px;
+}
+
+#tills a {
+    color: #A0828C;
+
+    font-weight: bold;
+}
+
+#tills a:hover {
+    color: rosybrown;
+}
+
+
+/* ==================================================
+   11. CASH IN / CASH OUT
+   ================================================== */
+
+#cashin-cashout {
+    border-top: 5px solid rosybrown;
+}
+
+#cashin-cashout button {
+    margin-top: 10px;
+}
+.type {
+    color: rosybrown;
+    font-weight: bold;
+}
+
+
+/* ==================================================
+   12. TILL HISTORY
+   ================================================== */
+
+#till-history {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 20px;
+}
+
+th {
+    padding: 12px;
+
+    background-color: rosybrown;
+    color: white;
+
+    text-align: left;
+}
+
+td {
+    padding: 12px;
+
+    background-color: white;
+
+    border-bottom: 1px solid mistyrose;
+}
+
+tr:hover td {
+    background-color: mistyrose;
+}
+
+
+/* ==================================================
+   13. FOOTER
+   ================================================== */
+
+footer {
+    color:#151b25;
+    background-color:#151b25;
+    color: white;
+
+    margin-top: 40px;
+    padding: 25px;
+
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* ==================================================
+   14. MOBILE SCREEN
+   ================================================== */
+
+@media (max-width: 700px) {
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav li {
+        display: block;
+
+        margin: 10px 0;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+    article,
+    section {
+        padding: 20px;
+    }
+
+}
