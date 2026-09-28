@@ -3,7 +3,6 @@
    Main Stylesheet
    ================================================== */
 
-
 /* ==================================================
    1. BASIC RESET
    ================================================== */
@@ -13,17 +12,20 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
     margin: 0;
     padding: 0;
 
-    font-family:  Verdana, Tahoma, sans-serif;
+    font-family: Verdana, Tahoma, sans-serif;
     font-size: 16px;
     line-height: 1.6;
 
-    background-color:#ECECEC;
-    color:#111827;
+    background-color: #ECECEC;
+    color: #111827;
 }
-
 
 /* ==================================================
    2. HEADER
@@ -32,9 +34,7 @@ body {
 header {
     background-color: #111827;
     color: white;
-
     text-align: center;
-
     padding: 40px 20px;
 }
 
@@ -45,16 +45,13 @@ header img {
 
 header h1 {
     margin: 10px 0;
-
     font-size: 36px;
 }
 
 header p {
     margin: 0;
-
     font-size: 16px;
 }
-
 
 /* ==================================================
    3. NAVIGATION
@@ -62,7 +59,6 @@ header p {
 
 nav {
     background-color: mistyrose;
-
     padding: 15px 30px;
 }
 
@@ -73,21 +69,17 @@ nav h2 {
 nav ul {
     margin: 0;
     padding: 0;
-
     list-style: none;
-
     text-align: center;
 }
 
 nav li {
     display: inline-block;
-
     margin: 0 15px;
 }
 
 nav a {
     color: rosybrown;
-
     font-weight: bold;
     text-decoration: none;
 }
@@ -96,18 +88,17 @@ nav a:hover {
     color: #A0828C;
 }
 
-
 /* ==================================================
    4. MAIN CONTENT
    ================================================== */
 
 main {
+    flex: 1;
+    width: 100%;
     max-width: 1100px;
-
     margin: 40px auto;
     padding: 0 20px;
 }
-
 
 /* ==================================================
    5. INTRODUCTION / WHY TILLI
@@ -115,16 +106,13 @@ main {
 
 article {
     background-color: white;
-
     padding: 35px;
     margin-bottom: 30px;
-
     border-radius: 15px;
 }
 
 article h2 {
     margin-top: 0;
-
     color: rosybrown;
     font-size: 30px;
 }
@@ -137,30 +125,25 @@ article li {
     margin-bottom: 10px;
 }
 
-
 /* ==================================================
    6. CONTENT SECTIONS
    ================================================== */
 
 section {
     background-color: white;
-
     padding: 30px;
     margin: 30px 0;
-
     border-radius: 15px;
 }
 
 section h2 {
     margin-top: 0;
-
     color: rosybrown;
 }
 
 section h3 {
     color: rosybrown;
 }
-
 
 /* ==================================================
    7. FORMS
@@ -169,29 +152,23 @@ section h3 {
 form {
     display: flex;
     flex-direction: column;
-
     gap: 10px;
 }
 
 label {
     color: rosybrown;
-
     font-weight: bold;
 }
 
 input,
 select {
     width: 100%;
-
     padding: 12px;
-
     background-color: white;
-    color: #EDDFE2;
-
+    color: #29191c;
     border: 1px solid lightpink;
     border-radius: 8px;
-
-    font-family:  Verdana, Tahoma, sans-serif;
+    font-family: Verdana, Tahoma, sans-serif;
     font-size: 15px;
 }
 
@@ -215,23 +192,18 @@ input[type="radio"] {
     margin-right: 8px;
 }
 
-
 /* ==================================================
    9. BUTTONS
    ================================================== */
 
 button {
     padding: 12px 20px;
-
     background-color: rosybrown;
     color: white;
-
     border: none;
     border-radius: 8px;
-
-    font-family:  Verdana, Tahoma, sans-serif;
+    font-family: Verdana, Tahoma, sans-serif;
     font-weight: bold;
-
     cursor: pointer;
 }
 
@@ -247,10 +219,8 @@ button:active {
 button:disabled {
     background-color: lightgray;
     color: gray;
-
     cursor: not-allowed;
 }
-
 
 /* ==================================================
    10. MY TILLS
@@ -259,30 +229,25 @@ button:disabled {
 #tills ul {
     margin: 0;
     padding: 0;
-
     list-style: none;
 }
 
 #tills li {
     background-color: mistyrose;
-
     padding: 15px;
     margin-bottom: 10px;
-
     border-left: 5px solid lightpink;
     border-radius: 8px;
 }
 
 #tills a {
     color: #A0828C;
-
     font-weight: bold;
 }
 
 #tills a:hover {
     color: rosybrown;
 }
-
 
 /* ==================================================
    11. CASH IN / CASH OUT
@@ -295,11 +260,11 @@ button:disabled {
 #cashin-cashout button {
     margin-top: 10px;
 }
+
 .type {
     color: rosybrown;
     font-weight: bold;
 }
-
 
 /* ==================================================
    12. TILL HISTORY
@@ -311,26 +276,20 @@ button:disabled {
 
 table {
     width: 100%;
-
     border-collapse: collapse;
-
     margin-top: 20px;
 }
 
 th {
     padding: 12px;
-
     background-color: rosybrown;
     color: white;
-
     text-align: left;
 }
 
 td {
     padding: 12px;
-
     background-color: white;
-
     border-bottom: 1px solid mistyrose;
 }
 
@@ -338,26 +297,21 @@ tr:hover td {
     background-color: mistyrose;
 }
 
-
 /* ==================================================
    13. FOOTER
    ================================================== */
 
 footer {
-    color:#151b25;
-    background-color:#151b25;
+    background-color: #151b25;
     color: white;
-
     margin-top: 40px;
     padding: 25px;
-
     text-align: center;
 }
 
 footer p {
     margin: 0;
 }
-
 
 /* ==================================================
    14. MOBILE SCREEN
@@ -371,7 +325,6 @@ footer p {
 
     nav li {
         display: block;
-
         margin: 10px 0;
     }
 
@@ -384,5 +337,4 @@ footer p {
     section {
         padding: 20px;
     }
-
 }

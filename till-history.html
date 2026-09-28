@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilli - History</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <img src="images/logo.png" alt="Tilli Logo" width="100" height="100">
+        <h1>Welcome to Tilli!</h1>
+        <p><em>Real-time expense tracking for event crews, small businesses, and shared group budgets.</em></p>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="tilli.html">My Tills</a></li>
+            <li><a href="cash-in-cash-out.html">Cash In / Cash Out</a></li>
+            <li><a href="till-history.html">Till History</a></li>
+            <li><a href="index.html">Log Out</a></li>
+        </ul>
+    </nav>
+       
+    <hr>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- History Table Section -->
+        <section id="till-history">
+            <h2>Till History</h2>
+            <table>
+                <thead> 
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Particulars</th>
+                        <th scope="col">Source/Vendor</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Added By</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table Data Rows -->
+                    <tr>
+                        <td>09-19-2026</td>
+                        <td>Cash Out</td>
+                        <td>Meals</td>
+                        <td>Company dinner</td>
+                        <td>Wolfgang</td>
+                        <td>₱ 34,783.67</td>
+                        <td>Heart (Host)</td>
+                        <td>Active</td>
+                        <td>
+                            <button type="button" disabled>Void</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>09-26-2026</td>
+                        <td>Cash In</td>
+                        <td>Allowance</td>
+                        <td>School-October allowance</td>
+                        <td>Daddy</td>
+                        <td>₱ 6,000.00</td>
+                        <td>Moning (Member)</td>
+                        <td>Active</td>
+                        <td>
+                            <button type="button">Void</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button">Edit</button>
+        </section>
+    </main>
+    
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Tilli. <em>All rights reserved.</em></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="tilli-js/app.js"></script>
+
+</body>
+</html>

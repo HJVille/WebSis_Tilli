@@ -3,73 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tilli</title>
-     <link rel="stylesheet" href="style.css">
+    <title>Tilli - My Tills</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
+    <!-- Header Section -->
     <header>
         <img src="images/logo.png" alt="Tilli Logo" width="100" height="100">
         <h1>Welcome to Tilli!</h1>
-        <p>
-            <em>Real-time expense tracking for event crews, small businesses, and shared group budgets.</em>
-        </p>
+        <p><em>Real-time expense tracking for event crews, small businesses, and shared group budgets.</em></p>
     </header>
 
+    <!-- Navigation Menu -->
     <nav>
         <h2>Navigation</h2>
         <ul>
-            <li><a href="#tills">My Tills</a></li>
-            <li><a href="#cashin-cashout">Cash In / Cash Out</a></li>
-            <li><a href="#till-history">Till History</a></li>
+            <li><a href="tilli.html">My Tills</a></li>
+            <li><a href="cash-in-cash-out.html">Cash In / Cash Out</a></li>
+            <li><a href="till-history.html">Till History</a></li>
+            <li><a href="index.html">Log Out</a></li>
         </ul>
     </nav>
-
+    
     <hr>
 
+    <!-- Main Content Area -->
     <main>
-        <article>
-            <h2>Manage Shared Funds, Minus the Chaos</h2>
-
-            <p>Tilli tracks group spending in real-time for small businesses, events, and shared budgets.</p>
-
-            <h3>Why Tilli?</h3>
-            
-            <ul>
-                <li><strong>Instant Logging:</strong> Record cash in and out on the go.</li>
-                <li><strong>Role Access:</strong> Secure data with Host, Co-Host, and Member permissions.</li>
-                <li><strong>Audit Trails:</strong> Void errors with a reason instead of deleting history.</li>
-                <li><strong>Easy Exports:</strong> Generate clean CSV or PDF reports for accounting.</li>
-            </ul>
-        </article>
-
-        <h2>Login or Register</h2>
-        
-        <form>
-            <label for="email">Email address:</label>
-            <input type="email" name="email" id="email" required>
-
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password" required>
-
-            <button type="submit">Log In</button>
-            <button type="submit">Create Account</button>
-        </form>
-
-        <hr>
-
+        <!-- My Tills Section -->
         <section id="tills">
             <h2>My Tills</h2>
 
+            <!-- Active Tills List -->
             <h3>Active Tills</h3>
-
             <ul>
                 <li><a href="till-1">Company</a> (Role: <em>Host</em>)</li>
                 <li><a href="till-2">Personal</a> (Role: <em>Member</em>)</li>
             </ul>
 
+            <!-- Pending Invitations List -->
             <h3>Pending Invitations</h3>
-
             <ul>
                 <li>
                     <strong>Family Vacation</strong>
@@ -79,138 +52,37 @@
                 </li>
             </ul>
 
+            <!-- Create a New Till Form -->
             <h3>Create a New Till</h3>
-
             <form>
                 <label for="till-name">Till Name:</label>
                 <input type="text" id="till-name" name="till-name" required>
 
+                <!-- Visibility Options -->
                 <p class="till-visibility">Till visibility:</p>
-
-            <div class="radio-option">
-               <input type="radio" id="visibility-personal" name="visibility" value="personal">
-               <label for="visibility-personal">Personal / Household (<em>Open</em>)</label>
-            </div>
-
-            <div class="radio-option">
-               <input type="radio" id="visibility-team" name="visibility" value="team">
-               <label for="visibility-team">Team (<em>Restricted</em>)</label>
-            </div>
+                <div class="radio-option">
+                   <input type="radio" id="visibility-personal" name="visibility" value="personal">
+                   <label for="visibility-personal">Personal / Household (<em>Open</em>)</label>
+                </div>
+                <div class="radio-option">
+                   <input type="radio" id="visibility-team" name="visibility" value="team">
+                   <label for="visibility-team">Team (<em>Restricted</em>)</label>
+                </div>
 
                 <button type="submit"><strong>Create Till</strong></button>
             </form>
-       
         </section>
-
-        <hr>
-
-        <section id="cashin-cashout">
-            <h2>Cash In / Cash Out</h2>
-
-            <form>
-                <label for="date">Date:</label>
-                <input type="date" id="date" name="date" required>
-
-                <p class="type">Type:</p>
-
-                 <div>
-                     <input type="radio" id="cash-in" name="type" value="cash-in" required>
-                     <label for="cash-in">Cash In</label>
-                 </div>
-
-             <div>
-                <input type="radio" id="cash-out" name="type" value="cash-out">
-                <label for="cash-out">Cash Out</label>
-                 </div>
-
-                     <label for="category">Category:</label>
-                <select id="category" name="category" required>
-                    <option value="transportation">Transport</option>
-                    <option value="food">Food</option>
-                    <option value="supplies">Supplies</option>
-                    <option value="services">Services</option>
-                    <option value="allowance">Allowance</option>
-                    <option value="payment">Payment</option>
-                    <option value="miscellaneous">Other</option>
-                </select>
-
-                <label for="miscellaneous">Other, <em>please specify</em>:</label>
-                <input type="text" id="miscellaneous" name="other">
-
-                <label for="particulars">Particulars:</label>
-                <input type="text" id="particulars" name="particulars" required>
-
-                <label for="amount">Amount (₱):</label>
-                <input type="number" id="amount" name="amount" min="0.01" step="0.01" required>
-
-                <button type="submit"><strong>Till it!</strong></button>
-            </form>
-        </section>
-
-        <hr>
-
-        <section id="till-history">
-            <h2>Till History</h2>
-
-            <table>
-
-                <thead> 
-                    <tr>
-                        <th scope="col">Date</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Category</th>
-                        <th scope="col">Particulars</th>
-                        <th scope="col">Source/Vendor</th>
-                        <th scope="col">Amount</th>
-                        <th scope="col">Added By</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-
-                    <tr>
-                        <td>09-19-2026</td>
-                        <td>Cash Out</td>
-                        <td>Meals</td>
-                        <td>Company dinner</td>
-                        <td>Wolfgang</td>
-                        <td>₱ 34,783.67</td>
-                        <td>Heart (Host)</td>
-                        <td>Active</td>
-                        <td>
-                            <button type="button" disabled>Void</button>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>09-26-2026</td>
-                        <td>Cash In</td>
-                        <td>Allowance</td>
-                        <td>School-October allowance</td>
-                        <td>Daddy</td>
-                        <td>₱ 6,000.00</td>
-                        <td>Moning (Member)</td>
-                        <td>Active</td>
-                        <td>
-                            <button type="button">Void</button>
-                        </td>
-                    </tr>
-
-                </tbody>
-            </table>
-
-            <button type="button">Edit</button>
-        </section>
-
-        <hr>
-
     </main>
+    
+    <hr>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Tilli. <em>All rights reserved.</em></p>
     </footer>
-    
+
+    <!-- Scripts -->
+    <script src="tilli-js/app.js"></script>
+
 </body>
 </html>

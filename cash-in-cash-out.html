@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilli - Cash In / Out</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <img src="images/logo.png" alt="Tilli Logo" width="100" height="100">
+        <h1>Welcome to Tilli!</h1>
+        <p><em>Real-time expense tracking for event crews, small businesses, and shared group budgets.</em></p>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="tilli.html">My Tills</a></li>
+            <li><a href="cash-in-cash-out.html">Cash In / Cash Out</a></li>
+            <li><a href="till-history.html">Till History</a></li>
+            <li><a href="index.html">Log Out</a></li>
+        </ul>
+    </nav>
+    
+    <hr>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Transaction Form Section -->
+        <section id="cashin-cashout">
+            <h2>Cash In / Cash Out</h2>
+            <form>
+                
+                <!-- Date Input -->
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <!-- Transaction Type Options -->
+                <p class="type">Type:</p>
+                <div>
+                     <input type="radio" id="cash-in" name="type" value="cash-in" required>
+                     <label for="cash-in">Cash In</label>
+                </div>
+                <div>
+                     <input type="radio" id="cash-out" name="type" value="cash-out">
+                     <label for="cash-out">Cash Out</label>
+                </div>
+
+                <!-- Category Selection -->
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="transportation">Transport</option>
+                    <option value="food">Food</option>
+                    <option value="supplies">Supplies</option>
+                    <option value="services">Services</option>
+                    <option value="allowance">Allowance</option>
+                    <option value="payment">Payment</option>
+                    <option value="miscellaneous">Other</option>
+                </select>
+
+                <label for="miscellaneous">Other, <em>please specify</em>:</label>
+                <input type="text" id="miscellaneous" name="other">
+
+                <!-- Transaction Details -->
+                <label for="particulars">Particulars:</label>
+                <input type="text" id="particulars" name="particulars" required>
+
+                <label for="amount">Amount (₱):</label>
+                <input type="number" id="amount" name="amount" min="0.01" step="0.01" required>
+
+                <!-- Submit Button -->
+                <button type="submit"><strong>Till it!</strong></button>
+            </form>
+        </section>
+    </main>
+    
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Tilli. <em>All rights reserved.</em></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="tilli-js/app.js"></script>
+
+</body>
+</html>
