@@ -80,7 +80,6 @@ if (pendingList) {
 let amountInput = document.getElementById("amount");
 if (amountInput) {
     let currentBalance = 0;
-    let cashInRadio = document.getElementById("cash-in");
     let categoryInput = document.getElementById("category");
     let particularsInput = document.getElementById("particulars");
     let cashSectionHeader = document.querySelector("#cashin-cashout h2");
@@ -88,26 +87,60 @@ if (amountInput) {
 
     cashForm.onsubmit = function(event) {
         event.preventDefault(); // Stop page from reloading
-        
-        let transactionAmount = Number(amountInput.value);
 
-        if (transactionAmount > 0) {
-            // Check if Cash In or Cash Out
-            if (cashInRadio.checked === true) {
-                currentBalance = currentBalance + transactionAmount;
-            } else {
-                currentBalance = currentBalance - transactionAmount;
+        let transactionAmount = Number(amountInput.value);
+        let selectedType = document.querySelector('input[name="type"]:checked');
+
+        if (transactionAmount > 0 && selectedType) {
+            let transaction = {
+                date: document.getElementById("date").value,
+                type: selectedType.value,
+                category: categoryInput.value,
+                particulars: particularsInput.value,
+                amount: transactionAmount
+            };
+
+            // Include the extra text when the user chooses "Other"
+            if (categoryInput.value === "miscellaneous") {
+                transaction.other = otherInput.value;
             }
 
-            // Update the header text
-            cashSectionHeader.textContent = "Cash In / Cash Out | Balance: ₱ " + currentBalance;
-            
-            alert("Transaction successful! (History will update on the Till History page)");
+            fetch("http://localhost:3001/api/transactions", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(transaction)
+            })
+            .then(function(response) {
+                if (!response.ok) {
+                    throw new Error("The server could not save the transaction.");
+                }
+                return response.json();
+            })
+            .then(function(data) {
+                if (data.message !== "Transaction saved successfully.") {
+                    throw new Error("The server did not confirm the transaction.");
+                }
 
-            // Clear the inputs
-            amountInput.value = ""; 
-            particularsInput.value = "";
-            
+                // Update the balance after the server saves the transaction
+                if (selectedType.value === "cash-in") {
+                    currentBalance = currentBalance + transactionAmount;
+                } else {
+                    currentBalance = currentBalance - transactionAmount;
+                }
+
+                cashSectionHeader.textContent = "Cash In / Cash Out | Balance: ₱ " + currentBalance;
+                alert("Transaction saved successfully!");
+
+                // Clear the inputs
+                amountInput.value = "";
+                particularsInput.value = "";
+            })
+            .catch(function(error) {
+                console.error("Error saving transaction:", error);
+                alert("Could not save the transaction. Please try again.");
+            });
         } else {
             alert("Please enter a valid amount!");
         }
